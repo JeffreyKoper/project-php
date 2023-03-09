@@ -36,7 +36,7 @@ $products = $stmt->fetchAll();
                 <tr>
                     <td><?php echo $product["id"] ?></td>
                     <td><?php echo $product["product_name"] ?></td>
-                    <td><?php echo $product["price"] ?></td>
+                    <td>€ <?php echo $product["price"] ?></td>
                     <td><?php echo $product["fabrikant"] ?></td>
                 </tr>
             <?php endforeach; ?>

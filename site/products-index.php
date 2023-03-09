@@ -3,7 +3,7 @@
 require 'database.php';
 
 
-$stmt = $conn->prepare("SELECT *, manufacturers.name as fabrikant FROM products
+$stmt = $conn->prepare("SELECT *, products.name AS product_name,  manufacturers.name as fabrikant FROM products
 JOIN manufacturers ON manufacturers.id = products.manufacturer");
 $stmt->execute();
 
@@ -35,7 +35,7 @@ $products = $stmt->fetchAll();
             <?php foreach($products as $product) : ?>      
                 <tr>
                     <td><?php echo $product["id"] ?></td>
-                    <td><?php echo $product["name"] ?></td>
+                    <td><?php echo $product["product_name"] ?></td>
                     <td><?php echo $product["price"] ?></td>
                     <td><?php echo $product["fabrikant"] ?></td>
                 </tr>
